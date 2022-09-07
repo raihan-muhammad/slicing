@@ -1,0 +1,112 @@
+// $main: #1993ab;
+
+// $netural: #575757;
+// $neutral-50: '#AEAEAE';
+// $neutral-60: '#8E8E8E';
+// $neutral-80: '#575757';
+// $neutral-70: '#696969';
+// $class-border: '#C9C9C9';
+
+// .parent-container {
+// 	@apply container flex flex-col justify-center w-full mx-auto;
+// }
+
+// .inner-container {
+// 	@apply container px-40 mt-20;
+// }
+
+// .title {
+// 	@apply font-medium text-4xl text-center leading-10;
+// }
+
+// .summary-title {
+// 	@apply text-center font-medium text-2xl;
+// 	color: $main;
+// }
+
+// .box {
+// 	@apply w-full mt-5 bg-blue-600;
+// }
+
+// .columns__about-2 {
+// 	@apply grid grid-cols-3 mt-20;
+
+// 	.columns__about-left {
+// 		.image-hero {
+// 			@apply -mt-10 w-3/4;
+// 		}
+// 	}
+
+// 	.columns__about-right {
+// 		@apply col-span-2 pl-12 font-normal text-sm leading-6;
+
+// 		li {
+// 			color: $netural;
+// 			@apply mt-2;
+// 		}
+// 	}
+// }
+
+// /* workshop */
+
+// .partner {
+// 	@apply mt-20 flex justify-center mb-52;
+// }
+
+// .partner-box {
+// 	@apply flex w-full gap-20 justify-center flex-wrap w-5/6;
+// }
+
+// .partner-img {
+// 	max-width: 200px;
+// 	/* @apply mr-20 gap-5; */
+// }
+
+// /* class */
+
+// .class-parent {
+// 	@apply grid grid-cols-4 gap-4;
+
+// 	.class-item {
+// 		@apply h-96 rounded-xl bg-white border border-neutral-40;
+// 		.class-item-inner {
+// 			@apply p-2;
+
+// 			.class-title {
+// 				@apply font-medium text-xl mt-4;
+// 			}
+
+// 			.class-author-parent {
+// 				@apply flex items-center mt-2;
+
+// 				.class-author-avatar {
+// 					@apply w-6 mr-3 rounded-full;
+// 				}
+
+// 				.class-author-name {
+// 					@apply text-sm font-medium text-neutral-70;
+// 				}
+// 			}
+
+// 			.class-item-body {
+// 				@apply h-10 w-full text-ellipsis font-normal text-sm text-neutral-80 mt-4;
+// 			}
+
+// 			.class-item-price-parent {
+// 				@apply flex w-full items-center h-5 mt-4;
+
+// 				.class-item-price {
+// 					@apply text-primary-blue-main font-medium text-lg;
+// 				}
+
+// 				.class-item-price-dicount {
+// 					@apply line-through font-normal text-sm ml-2 text-neutral-60;
+// 				}
+// 			}
+
+// 			.class-item-sold {
+// 				@apply font-normal text-xs text-neutral-50 mt-4;
+// 			}
+// 		}
+// 	}
+// }

@@ -1,5 +1,5 @@
 import React from 'react';
-import HalamanPendaftaran from './HalamanPendaftaran';
+import HalamanPendaftaran from './components/HalamanPendaftaran';
 
 function App() {
 	return (
