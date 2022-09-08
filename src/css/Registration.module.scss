@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body {
+	@apply font-poppins;
+}
+
+.banner__title {
+	@apply bg-primary-blue-main w-full p-8 text-center ds-text-heading-l text-neutral-10;
+}
+
+.parent__container {
+	@apply container mx-auto;
+
+	.inner__container {
+		@apply container;
+
+		.content__registration {
+			@apply flex justify-center flex-col;
+			.content__title {
+				@apply ds-text-heading-m text-neutral-90 my-12 text-center;
+			}
+
+			.content__registration-point-parent {
+				@apply flex justify-center gap-[109px];
+
+				.content__registration-point-item {
+					@apply w-[300px] h-[449px] text-center;
+
+					svg {
+						@apply w-full;
+					}
+
+					.content__registration-point-item-title {
+						@apply text-primary-blue-main ds-text-heading-s text-center;
+					}
+
+					.content__registration-point-item-info {
+						@apply ds-text-large text-neutral-80 mt-[14px];
+
+						span {
+							@apply ds-text-large font-bold;
+						}
+					}
+				}
+			}
+
+			.registration__assent {
+				@apply w-full flex justify-center mb-[39px] mt-12;
+
+				p {
+					@apply w-[500px] ds-text-mini text-neutral-60 text-center;
+
+					a {
+						@apply text-primary-blue-main;
+					}
+				}
+			}
+
+			.divider {
+				@apply flex justify-center;
+				hr {
+					@apply border border-neutral-30 mb-12 w-[1118px];
+				}
+			}
+
+			.content__registration_action_wrapper {
+				@apply flex justify-center mb-[78px];
+
+				.btn__wrapper {
+					@apply w-[562px] flex justify-between;
+				}
+
+				.btn {
+					@apply rounded-lg py-3 px-[100px];
+				}
+
+				.btn-disagree {
+					@apply border border-primary-blue-main text-primary-blue-main ds-text-medium-m;
+				}
+
+				.btn-agree {
+					@apply bg-primary-blue-main ds-text-medium-m text-white;
+				}
+			}
+		}
+	}
+}
