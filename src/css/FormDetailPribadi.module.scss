@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body {
+	@apply font-poppins;
+}
+
+.banner__title {
+	@apply bg-primary-blue-main w-full p-8 text-center ds-text-heading-l text-neutral-10;
+}
+
+.parent__container {
+	@apply container mx-auto;
+
+	.inner__container {
+		@apply container flex justify-center;
+	}
+
+	.form__label {
+		@apply ds-text-large;
+		span {
+			@apply text-danger-main;
+		}
+	}
+
+	.form__regis__wrapper {
+		@apply mt-[84px] w-[1118px] flex flex-col justify-center relative;
+
+		.form__regis__content {
+			@apply flex flex-col h-fit mb-[50px] border border-neutral-20;
+
+			.form__regis__title {
+				@apply text-center mt-8 ds-text-heading-s text-primary-blue-main;
+			}
+
+			.form__regis__content-wrapper {
+				@apply px-6;
+
+				.form__regis-column-two {
+					@apply grid grid-cols-2 gap-6;
+
+					.form__regis-column-left {
+						.form__regis__input__wrapper {
+							&:nth-child(1) {
+								label {
+									@apply block;
+								}
+
+								input {
+									@apply mt-2;
+								}
+							}
+
+							label {
+								@apply hidden;
+							}
+
+							input {
+								@apply mt-[30px];
+							}
+						}
+					}
+
+					.form__regis__input__wrapper {
+						@apply flex flex-col  mt-6;
+
+						input {
+							@apply mt-2
+      block
+      w-full
+      py-[13px]
+      pl-4
+      ds-text-large
+      text-neutral-100
+      bg-neutral-10
+      border border-neutral-20
+      rounded-xl
+      transition
+      ease-in-out
+  focus:border-neutral-20
+      m-0 shadow-input
+      placeholder:text-neutral-50;
+						}
+					}
+				}
+
+				.form__button__wrapper {
+					@apply flex justify-end  gap-[10px] mt-8 mb-8;
+
+					.form__button__wrapper-button-next {
+						@apply bg-primary-orange-main w-[124px] h-[40px] rounded-lg ds-text-medium text-neutral-10;
+					}
+
+					.form__button__wrapper-button-prev {
+						@apply bg-transparent w-[124px] h-[40px] rounded-lg ds-text-medium text-primary-orange-main border border-primary-orange-main;
+					}
+				}
+			}
+		}
+	}
+}

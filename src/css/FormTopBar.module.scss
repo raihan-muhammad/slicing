@@ -1,0 +1,28 @@
+.form__regis__content-topbar {
+	@apply flex justify-between;
+
+	.form__regis__content-topbar-item {
+		@apply border-b border-neutral-20 border-r h-[90px] w-[223px] flex justify-center items-center;
+
+		&:nth-child(5) {
+			@apply border-r-0;
+		}
+
+		&.active {
+			@apply bg-primary-blue-surface;
+			box-shadow: inset 0px -3px 0px #1993ab;
+		}
+
+		input {
+			@apply mr-[18px] rounded-full bg-white appearance-none cursor-pointer outline-none border border-neutral-50 focus:outline-none p-2 pointer-events-none;
+
+			&:checked {
+				@apply bg-primary-blue-main outline-none;
+			}
+		}
+
+		label {
+			@apply text-primary-blue-main w-[85px] ds-text-jumbo;
+		}
+	}
+}

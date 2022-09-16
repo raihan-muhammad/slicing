@@ -1,5 +1,6 @@
 import styles from '../css/Form.module.scss';
 import { CoutionIcon, QuestionMessageIcon } from '../images';
+import FormTopBar from './FormTopBar';
 
 const Form = () => {
 	return (
@@ -10,41 +11,7 @@ const Form = () => {
 				<div className={styles['inner__container']}>
 					<div className={styles['form__regis__wrapper']}>
 						<div className={styles['form__regis__content']}>
-							<div className={styles['form__regis__content-topbar']}>
-								<div
-									className={[
-										styles['form__regis__content-topbar-item'],
-										styles['active'],
-									].join(' ')}>
-									<input
-										type='checkbox'
-										name='informasi'
-										id='infomasi'
-										checked
-									/>
-									<label for='infomasi'>Informasi</label>
-								</div>
-								<div className={[styles['form__regis__content-topbar-item']]}>
-									<input type='checkbox' name='detail' id='detail' />
-									<label for='detail'>Detail</label>
-								</div>
-								<div className={[styles['form__regis__content-topbar-item']]}>
-									<input type='checkbox' name='alamat' id='alamat' />
-									<label for='alamat'>Alamat</label>
-								</div>
-								<div className={[styles['form__regis__content-topbar-item']]}>
-									<input
-										type='checkbox'
-										name='unggahDokumen'
-										id='unggahDokumen'
-									/>
-									<label for='unggahDokumen'>Unggah Dokumen</label>
-								</div>
-								<div className={[styles['form__regis__content-topbar-item']]}>
-									<input type='checkbox' name='selesai' id='selesai' />
-									<label for='selesai'>Selesai</label>
-								</div>
-							</div>
+							<FormTopBar />
 							<div className={styles['form__regis__content-wrapper']}>
 								<div className={styles['form__regis__title']}>Informasi</div>
 								<div className={styles['form__regis__select__wrapper']}>

@@ -28,35 +28,6 @@ body {
 		.form__regis__content {
 			@apply flex flex-col h-fit mb-[50px] border border-neutral-20;
 
-			.form__regis__content-topbar {
-				@apply flex justify-between;
-
-				.form__regis__content-topbar-item {
-					@apply border-b border-neutral-20 border-r h-[90px] w-[223px] flex justify-center items-center;
-
-					&:nth-child(5) {
-						@apply border-r-0;
-					}
-
-					&.active {
-						@apply bg-primary-blue-surface;
-						box-shadow: inset 0px -3px 0px #1993ab;
-					}
-
-					input {
-						@apply mr-[18px] rounded-full bg-white appearance-none cursor-pointer outline-none border border-neutral-50 focus:outline-none p-2;
-
-						&:checked {
-							@apply bg-primary-blue-main outline-none;
-						}
-					}
-
-					label {
-						@apply text-primary-blue-main w-[85px] ds-text-jumbo;
-					}
-				}
-			}
-
 			.form__regis__title {
 				@apply text-center mt-8 ds-text-heading-s text-primary-blue-main;
 			}
@@ -134,7 +105,7 @@ body {
       ease-in-out
   focus:border-neutral-20
       m-0 shadow-input
-      placeholder:text-neutral-20;
+      placeholder:text-neutral-50;
 					}
 				}
 
