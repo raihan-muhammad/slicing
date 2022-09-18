@@ -16,11 +16,7 @@ const FormTopBar = () => {
 					/>
 					<label for='infomasi'>Informasi</label>
 				</div>
-				<div
-					className={[
-						styles['form__regis__content-topbar-item'],
-						styles['active'],
-					].join(' ')}>
+				<div className={styles['form__regis__content-topbar-item']}>
 					<input
 						type='checkbox'
 						name='detail'
@@ -31,8 +27,19 @@ const FormTopBar = () => {
 					/>
 					<label for='detail'>Detail</label>
 				</div>
-				<div className={[styles['form__regis__content-topbar-item']]}>
-					<input type='checkbox' name='alamat' id='alamat' readOnly disabled />
+				<div
+					className={[
+						styles['form__regis__content-topbar-item'],
+						styles['active'],
+					].join(' ')}>
+					<input
+						type='checkbox'
+						name='alamat'
+						id='alamat'
+						readOnly
+						disabled
+						checked
+					/>
 					<label for='alamat'>Alamat</label>
 				</div>
 				<div className={[styles['form__regis__content-topbar-item']]}>

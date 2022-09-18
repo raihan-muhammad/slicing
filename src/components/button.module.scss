@@ -1,0 +1,7 @@
+.form__button-next {
+	@apply bg-primary-orange-main w-[124px] h-[40px] rounded-lg ds-text-medium text-neutral-10;
+}
+
+.form__button-prev {
+	@apply bg-transparent w-[124px] h-[40px] rounded-lg ds-text-medium text-primary-orange-main border border-primary-orange-main;
+}

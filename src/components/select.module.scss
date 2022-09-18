@@ -1,0 +1,28 @@
+.form__regis__select__wrapper {
+	@apply mt-6;
+
+	.form__label {
+		@apply ds-text-large;
+		span {
+			@apply text-danger-main;
+		}
+	}
+
+	select {
+		@apply form-select appearance-none mt-2
+      block
+      w-full
+      py-[13px]
+      pl-4
+      ds-text-large
+      text-neutral-100
+      bg-neutral-10 bg-clip-padding bg-no-repeat
+      border border-neutral-20
+      rounded-xl
+      transition
+      ease-in-out
+      m-0
+      focus:ring-0
+      focus:border-neutral-20;
+	}
+}

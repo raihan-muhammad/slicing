@@ -14,10 +14,10 @@
 		}
 
 		input {
-			@apply mr-[18px] rounded-full bg-white appearance-none cursor-pointer outline-none border border-neutral-50 focus:outline-none p-2 pointer-events-none;
+			@apply mr-[18px] rounded-full bg-white appearance-none  border border-neutral-50  p-2;
 
 			&:checked {
-				@apply bg-primary-blue-main outline-none;
+				@apply bg-primary-blue-main border-none;
 			}
 		}
 

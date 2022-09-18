@@ -1,0 +1,14 @@
+.form__input {
+	@apply flex flex-col  mt-6;
+
+	.form__label {
+		@apply ds-text-large;
+		span {
+			@apply text-danger-main;
+		}
+	}
+
+	.form__input-element {
+		@apply mt-2 block w-full py-[13px] pl-4 ds-text-large text-neutral-100 bg-neutral-10 border border-neutral-20 rounded-xl transition ease-in-out focus:border-neutral-20 m-0 shadow-input placeholder:text-neutral-50 focus:ring-0;
+	}
+}
