@@ -23,9 +23,21 @@ import {
 	MindMapHeroImg,
 	EnrollPrakerjaHero,
 } from '../images';
+import { useEffect } from 'react';
 
 const HalamanPendaftaran = () => {
 	const [faqOpen, setFaqOpen] = useState(false);
+	const [listClass, setListClass] = useState([]);
+
+	const getClassList = async () => {
+		fetch('https://api.greatedu.co.id/api/v2/home/prakerja')
+			.then((response) => response.json())
+			.then((responJson) => setListClass(responJson.data));
+	};
+
+	useEffect(() => {
+		getClassList();
+	}, []);
 
 	const faqData = [
 		{
@@ -212,114 +224,41 @@ const HalamanPendaftaran = () => {
 					<section className={styles['prakerja-class-section']}>
 						<div className={styles['title']}>Kartu Prakerja</div>
 						<div className={styles['class-parent']}>
-							<div className={styles['class-item']}>
-								<div className={styles['class-item-inner']}>
-									<img src={thumbnailClass} alt='' />
-									<div className={styles['class-title']}>Card TItle</div>
-									<div className={styles['class-instructor-parent']}>
-										<img
-											src={InstructorImg}
-											className={styles['class-instructor-avatar']}
-											alt='Avatar'
-										/>
-										<div className={styles['class-instructor-name']}>
-											Ayana Moon
-										</div>
-									</div>
-									<div className={styles['class-item-body']}>
-										Sticky notes serbaguna, indah men...
-									</div>
-									<div className={styles['class-item-price-parent']}>
-										<div className={styles['class-item-price']}>Rp500.000</div>
-										<div className={styles['class-item-price-dicount']}>
-											1,550,000
-										</div>
-									</div>
+							{listClass.map((data) => {
+								return (
+									<div key={data.id} className={styles['class-item']}>
+										<div className={styles['class-item-inner']}>
+											<img src={thumbnailClass} alt='' />
+											<div className={styles['class-title']}>{data.title}</div>
+											<div className={styles['class-instructor-parent']}>
+												<img
+													src={InstructorImg}
+													className={styles['class-instructor-avatar']}
+													alt='Avatar'
+												/>
+												<div className={styles['class-instructor-name']}>
+													Ayana Moon
+												</div>
+											</div>
+											<div className={styles['class-item-body']}>
+												Sticky notes serbaguna, indah men...
+											</div>
+											<div className={styles['class-item-price-parent']}>
+												<div className={styles['class-item-price']}>
+													Rp500.000
+												</div>
+												<div className={styles['class-item-price-dicount']}>
+													1,550,000
+												</div>
+											</div>
 
-									<div className={styles['class-item-sold']}>Terjual 105</div>
-								</div>
-							</div>
-							<div className={styles['class-item']}>
-								<div className={styles['class-item-inner']}>
-									<img src={thumbnailClass} alt='' />
-									<div className={styles['class-title']}>Card TItle</div>
-									<div className={styles['class-instructor-parent']}>
-										<img
-											src={InstructorImg}
-											className={styles['class-instructor-avatar']}
-											alt='Avatar'
-										/>
-										<div className={styles['class-instructor-name']}>
-											Ayana Moon
+											<div className={styles['class-item-sold']}>
+												Terjual 105
+											</div>
 										</div>
 									</div>
-									<div className={styles['class-item-body']}>
-										Sticky notes serbaguna, indah men...
-									</div>
-									<div className={styles['class-item-price-parent']}>
-										<div className={styles['class-item-price']}>Rp500.000</div>
-										<div className={styles['class-item-price-dicount']}>
-											1,550,000
-										</div>
-									</div>
-
-									<div className={styles['class-item-sold']}>Terjual 105</div>
-								</div>
-							</div>
-							<div className={styles['class-item']}>
-								<div className={styles['class-item-inner']}>
-									<img src={thumbnailClass} alt='' />
-									<div className={styles['class-title']}>Card TItle</div>
-									<div className={styles['class-instructor-parent']}>
-										<img
-											src={InstructorImg}
-											className={styles['class-instructor-avatar']}
-											alt='Avatar'
-										/>
-										<div className={styles['class-instructor-name']}>
-											Ayana Moon
-										</div>
-									</div>
-									<div className={styles['class-item-body']}>
-										Sticky notes serbaguna, indah men...
-									</div>
-									<div className={styles['class-item-price-parent']}>
-										<div className={styles['class-item-price']}>Rp500.000</div>
-										<div className={styles['class-item-price-dicount']}>
-											1,550,000
-										</div>
-									</div>
-
-									<div className={styles['class-item-sold']}>Terjual 105</div>
-								</div>
-							</div>
-							<div className={styles['class-item']}>
-								<div className={styles['class-item-inner']}>
-									<img src={thumbnailClass} alt='' />
-									<div className={styles['class-title']}>Card TItle</div>
-									<div className={styles['class-instructor-parent']}>
-										<img
-											src={InstructorImg}
-											className={styles['class-instructor-avatar']}
-											alt='Avatar'
-										/>
-										<div className={styles['class-instructor-name']}>
-											Ayana Moon
-										</div>
-									</div>
-									<div className={styles['class-item-body']}>
-										Sticky notes serbaguna, indah men...
-									</div>
-									<div className={styles['class-item-price-parent']}>
-										<div className={styles['class-item-price']}>Rp500.000</div>
-										<div className={styles['class-item-price-dicount']}>
-											1,550,000
-										</div>
-									</div>
-
-									<div className={styles['class-item-sold']}>Terjual 105</div>
-								</div>
-							</div>
+								);
+							})}
 						</div>
 					</section>
 					{/* end prakerja class */}
