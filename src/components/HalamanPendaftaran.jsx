@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import format from 'format-number';
 import styles from '../css/Pendaftaran.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -29,10 +30,18 @@ const HalamanPendaftaran = () => {
 	const [faqOpen, setFaqOpen] = useState(false);
 	const [listClass, setListClass] = useState([]);
 
+	const formatNumber = (prefix, number) => {
+		let data = format({ prefix, integerSeparator: '.' })(number);
+		return data;
+	};
+
 	const getClassList = async () => {
 		fetch('https://api.greatedu.co.id/api/v2/home/prakerja')
 			.then((response) => response.json())
-			.then((responJson) => setListClass(responJson.data));
+			.then((responJson) => {
+				setListClass(responJson.data);
+				console.log(listClass);
+			});
 	};
 
 	useEffect(() => {
@@ -228,24 +237,26 @@ const HalamanPendaftaran = () => {
 								return (
 									<div key={data.id} className={styles['class-item']}>
 										<div className={styles['class-item-inner']}>
-											<img src={thumbnailClass} alt='' />
+											<img src={data.thumbnail_url} alt='' />
 											<div className={styles['class-title']}>{data.title}</div>
 											<div className={styles['class-instructor-parent']}>
 												<img
-													src={InstructorImg}
+													src={data.provider.profile_photo_full_url}
 													className={styles['class-instructor-avatar']}
 													alt='Avatar'
 												/>
 												<div className={styles['class-instructor-name']}>
-													Ayana Moon
+													{data.provider.name}
 												</div>
 											</div>
-											<div className={styles['class-item-body']}>
-												Sticky notes serbaguna, indah men...
-											</div>
+											<div
+												className={styles['class-item-body']}
+												dangerouslySetInnerHTML={{
+													__html: data.description,
+												}}></div>
 											<div className={styles['class-item-price-parent']}>
 												<div className={styles['class-item-price']}>
-													Rp500.000
+													{formatNumber('Rp ', data.price)}
 												</div>
 												<div className={styles['class-item-price-dicount']}>
 													1,550,000
@@ -253,7 +264,7 @@ const HalamanPendaftaran = () => {
 											</div>
 
 											<div className={styles['class-item-sold']}>
-												Terjual 105
+												Terjual {data.transaction_success_count}
 											</div>
 										</div>
 									</div>

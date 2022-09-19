@@ -5,7 +5,7 @@ body {
 }
 
 .client__info {
-	@apply absolute right-[56px] bottom-0 w-[44px] h-[98px] flex flex-col justify-between;
+	@apply fixed right-[56px] bottom-14 z-10 w-[44px] h-[98px] flex flex-col justify-between;
 }
 
 .parent-container {
@@ -118,12 +118,16 @@ body {
 		@apply flex flex-wrap justify-center gap-5 mt-20;
 
 		.class-item {
-			@apply h-[371px] w-[264px] rounded-xl bg-white border border-neutral-40;
+			@apply h-fit w-[264px] rounded-xl bg-white border border-neutral-40;
 			.class-item-inner {
 				@apply p-3;
 
+				img {
+					@apply rounded-lg;
+				}
+
 				.class-title {
-					@apply font-medium ds-text-heading-s mt-4 overflow-hidden whitespace-nowrap text-ellipsis;
+					@apply font-medium ds-text-heading-s mt-4;
 				}
 
 				.class-instructor-parent {
@@ -179,14 +183,21 @@ body {
 		@apply bg-primary-blue-surface rounded-xl h-fit mb-[140px] w-[1118px] border border-neutral-40;
 
 		.faq-item {
+			&:nth-child(1) {
+				.faq-item-parent {
+					.faq-question-wrapper {
+						@apply border-t-0;
+					}
+				}
+			}
+		}
+
+		.faq-item {
 			.faq-item-parent {
 				@apply flex flex-col w-full;
 
 				.faq-question-wrapper {
 					@apply flex items-center relative p-5 border-t border-neutral-40 cursor-pointer;
-					/* &:first-child {
-						@apply border-none;
-					} */
 				}
 
 				.faq-answer-wrapper {
